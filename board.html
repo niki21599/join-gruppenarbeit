@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/index.js"></script>
     <script src="./js/navBar.js"></script>
+    <script src="./js/board.js"></script>
     <link rel="stylesheet" href="./css/board.css">
     <link rel="stylesheet" href="./css/navBar.css">
 
@@ -17,8 +18,27 @@
     <title>Kanban Board</title>
 </head>
 
-<body onload="includeHTML()">
+<body onload="includeHTML(), loadTasks()">
     <div w3-include-html="./template/navBar.html"></div>
+    <div class="board" id="board">
+        <div class="task">
+            <h3 class="heading">To Do</h3>
+            <div id="todo" class="task-section " ondrop="moveTo('todo')" ondragover="allowDrop(event), highlight('todo')" ondragleave="removeHighlight('todo')"> </div>
+        </div>
+        <div class="task">
+            <h3 class="heading">In Progress</h3>
+            <div id="inprogress" class="task-section " ondrop="moveTo('inprogress')" ondragover="allowDrop(event), highlight('inprogress')" ondragleave="removeHighlight('inprogress')"> </div>
+        </div>
+        <div class="task">
+            <h3 class="heading">Testing</h3>
+            <div id="testing" class="task-section " ondrop="moveTo('testing')" ondragover="allowDrop(event), highlight('testing')" ondragleave="removeHighlight('testing')"> </div>
+        </div>
+        <div class="task">
+            <h3 class="heading">Done</h3>
+            <div id="done" class="task-section " ondrop="moveTo('done')" ondragover="allowDrop(event), highlight('done')" ondragleave="removeHighlight('done')"> </div>
+        </div>
+
+    </div>
 
 
 </body>

@@ -1,0 +1,39 @@
+.board {
+    display: flex;
+    margin-top: 30px;
+    padding: 50px;
+}
+
+.heading {
+    text-align: center;
+}
+
+body {
+    display: flex;
+}
+
+.task-section {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 180px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 8px;
+}
+
+.card {
+    height: 100px;
+    width: 164px;
+    margin-top: 8px;
+    cursor: grab;
+}
+
+.drag-area-highlight {
+    background-color: rgba(0, 0, 0, 0.2);
+}

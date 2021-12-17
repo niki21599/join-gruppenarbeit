@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./smallest_backend_ever/mini_backend.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/navBar.js"></script>
     <script src="./js/board.js"></script>
+
     <link rel="stylesheet" href="./css/board.css">
     <link rel="stylesheet" href="./css/navBar.css">
 
@@ -20,6 +22,7 @@
 
 <body onload="includeHTML(), loadTasks()">
     <div w3-include-html="./template/navBar.html"></div>
+
     <div class="board" id="board">
         <div class="task">
             <h3 class="heading">To Do</h3>
@@ -39,6 +42,25 @@
         </div>
 
     </div>
+    <div id="task-detail" class="background-board d-none" onclick="closeInfo()">
+        <div class="card card-detail">
+            <div class="card-body">
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <h5 id="title" class="card-title">Card title</h5>
+                        <h6 id="due-date" class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    </div>
+                    <img id="user" src="./img/joinlogo.png" alt="Avatar" class="avatar">
+                </div>
+                <p id="description" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div style="display: flex;">
+                    <div id="urgency" class="gray-box">Bla Bla</div>
+                    <div id="category" class="gray-box"> WHU Whu whu </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 </body>

@@ -29,3 +29,5 @@ function includeHTML() {
         }
     }
 }
+
+setURL("https://gruppe-143.developerakademie.net/smallest_backend_ever");

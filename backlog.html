@@ -8,18 +8,73 @@
     <script src="./smallest_backend_ever/mini_backend.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/navBar.js"></script>
+    <script src="js/backlog.js"></script>
     <link rel="stylesheet" href="./css/backlog.css">
     <link rel="stylesheet" href="./css/navBar.css">
 
     <!-- Bootstrap Einbindung-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--font-family: 'PT Sans Caption', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
+
+
+
 
     <title>Kanban Board</title>
 </head>
 
-<body onload="includeHTML()">
+<body onload="includeHTML(),backlog()">
     <div w3-include-html="./template/navBar.html"></div>
+    <div>
+        <div class="backlog">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-family: 'PT Sans Caption', sans-serif; font-weight: bold; font-size: 2rem;">Backlog</span>
+                <span style="font-family: 'PT Sans Caption', sans-serif;font-weight: bolder; color: rgb(0, 0, 165);">Learning Management System Project</span>
+            </div>
+            <div class="headlines-backlog"> <!--headlines-->
+                <span>ASSIGNED TO</span>
+                <span style="margin-right: 10%;">CATEGORY</span>
+                <span>DETAILS</span>
+            </div>
+
+
+        <div id="backlog" class="over-task">
+           <!-- <div class="task">
+
+                <div class="assign">
+                    <img class="backlog-img" src="img/backlog-test.jpg">
+                    <div class="data">
+                        <span>Mister Reihmähn</span>
+                        <span style="color:rgb(157, 158, 247)">Reihmähn@example.com</span>
+                    </div>
+                </div>
+                <div class="category">
+                    <span>Lückenfüller</span>
+                </div>
+                <div class="details">
+                    <span>Gaaaaaaaaaaaaaaaaaanz viel Bla Bla...Lorem ipsum dolor sit amet, consetetur s</span>
+                </div>
+            
+            </div-->
+
+
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
 
 
 </body>

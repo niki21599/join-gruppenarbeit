@@ -19,10 +19,71 @@
     <title>Kanban Board</title>
 </head>
 
-<body onload="includeHTML()">
-    <div w3-include-html="./template/navBar.html"></div>
+<body onload="init(), includeHTML()">
+    <div w3-include-html="./template/navBar.html"> </div>
+    
 
+    <div class="page">
+        <h2>Add Task</h2>
+        <span>Learning Management System Project</span>
+        <!-- Container for Add Task -->
+        <div class="outerContainer">
+            <!-- Form -->
+            <form id="addTask" onsubmit="createTask(); return false;">
+                <div class="column">
+                    <!-- Title -->
+                    <div class="content">
+                        <b class="headline">TITEL</b>
+                        <input type="text" class="input" name="title" id="title" required>
+                    </div>
+                    <!-- Category -->
+                    <div class="content">
+                        <b class="headline">KATEGORIE</b>
+                        <input list="category" id="input-cat" class="input" required>
+                        <datalist id="category">
+                        </datalist>
+                    </div>
+                    <!-- Description -->
+                    <div class="content">
+                        <b class="headline">BESCHREIBUNG</b>
+                        <textarea name="Description" id="description" cols="30" rows="8" class="text" required></textarea>
+                    </div>
+                </div>
+                <div class="column">
+                    <!-- due date -->
+                    <div class="content">
+                        <b class="headline">BIS ZU</b>
+                        <input type="date" name="Date" id="date" class="input" required>
+                    </div>
+                    <!-- Urgency -->
+                    <div class="content">
+                        <b class="headline">DRINGLICHKEIT</b>
+                        <input list="urgency" id="input-urge" class="input" required>
+                        <datalist id="urgency">
+                        </datalist>
+                    </div>
+                    <!-- Assigned to -->
+                    <div class="content left">
+                        <b class="headline">ZUTEILEN AN</b>
+                        <img class="addPosition" src="./img/icon plus.png" onclick="showPosition()">
+                        <div id="select"></div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="content buttonBox">
+                        <button class="btnCancle" type="reset"><b>Löschen</b></button>
+                        <button class="btnCreate" type="submit"><b>Speichern</b></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
+    <!-- Window for selecting Positions -->
+    <div class="containerWindow display-none" id="containerWindow" onclick="hidePosition()">
+        <div class="window" id="window" onclick="event.stopPropagation()">
+        </div>
+    </div>
 </body>
+
 
 </html>

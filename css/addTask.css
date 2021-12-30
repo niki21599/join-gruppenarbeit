@@ -159,6 +159,10 @@ form {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.wrapper {
+    display: flex;
+}
+
 @media(max-width:900px) {
     .outerContainer {
         height: unset;

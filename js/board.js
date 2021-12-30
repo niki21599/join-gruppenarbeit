@@ -47,12 +47,12 @@ let tasks = [{
 let currentDraggedElement;
 
 async function loadTasksFromServer() {
-    // await downloadFromServer();
-    // tasks = JSON.parse(backend.getItem('tasks')) || [];
+    //await downloadFromServer();
+    //tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
 
 async function saveToServer() {
-    // await backend.setItem('tasks', JSON.stringify(tasks));
+    //await backend.setItem('tasks', JSON.stringify(tasks));
 }
 
 function updateTaskHTML() {

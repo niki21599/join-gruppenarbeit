@@ -150,15 +150,15 @@ function addTask() {
 
     let id = Math.random() * 1000000;
     let title = document.getElementById("title").value;
-    let section = "todo";
+    let section = "backlog";
     let description = document.getElementById("description").value;
     let date = document.getElementById("date").value;
     let urgency = document.getElementById("input-urge").value;
-    let user = "Niklas";
+    let user = new User();
     let category = document.getElementById("input-cat").value;
     let color = "yellow";
 
-    let task = new Task(id, title, section, description, date, urgency, user, category, color);
+    let task = new Task(id, title, section, description, date, urgency, user, category);
 
     addTaskToServer(task);
 

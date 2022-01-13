@@ -81,7 +81,7 @@ function openInfo(id) {
     document.getElementById("category").innerHTML = task.category;
     document.getElementById("urgency").innerHTML = task.urgency;
     document.getElementById("description").innerHTML = task.description;
-    document.getElementById("user").innerHTML = task.user;
+    document.getElementById("user").src = task.user.img;
     document.getElementById("task-detail").classList.remove("d-none");
 }
 

@@ -9,7 +9,7 @@ class Task {
     category;
     color
 
-    constructor(id, title, section, description, date, urgency, user, category, color) {
+    constructor(id, title, section, description, date, urgency, user, category) {
         this.id = id;
         this.title = title;
         this.section = section;
@@ -18,7 +18,7 @@ class Task {
         this.urgency = urgency;
         this.user = user;
         this.category = category;
-        this.color = color;
+
     }
 
 

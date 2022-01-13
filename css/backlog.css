@@ -82,3 +82,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.plus-button {
+    padding-right: 8px;
+    padding-top: 24px;
+}

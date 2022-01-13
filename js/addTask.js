@@ -59,7 +59,7 @@ function createTask() {
         assignedTo: selectetPositions,
     }, );
     backend.setItem('allTasks', JSON.stringify(allTasks));
-    deleteImputFields();
+    deleteInputFields();
     selectetPositions = [];
     alert('Die Aufgabe wurde erfolgreich gespeichert!');
 }
@@ -68,7 +68,7 @@ function createTask() {
  * 
  * clears the form
  */
-function deleteImputFields() {
+function deleteInputFields() {
     document.getElementById('title').value = '';
     document.getElementById('input-cat').value = '';
     document.getElementById('description').value = '';
@@ -161,6 +161,8 @@ function addTask() {
     let task = new Task(id, title, section, description, date, urgency, user, category);
 
     addTaskToServer(task);
+    deleteInputFields();
+    selectetPositions = [];
 
     return false;
 }

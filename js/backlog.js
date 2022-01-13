@@ -296,7 +296,7 @@ let assignment = [
 
 async function backlog() {
     await loadTasksFromServer();
-
+    document.getElementById('backlog').innerHTML = ""
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i]
         if (task.section === "backlog") {
@@ -325,8 +325,16 @@ async function backlog() {
                 <div class="details">
                     <span>${description}</span>
                 </div>
+                <a class="plus-button" href="#"onclick="addToBoard(${i})"><img src="../img/icon plus.png"></a>
         
             </div>`;
         }
     }
+}
+
+async function addToBoard(index) {
+    console.log(index);
+    tasks[index].section = "todo";
+    await saveToServer();
+    backlog();
 }

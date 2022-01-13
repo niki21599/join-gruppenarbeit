@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./smallest_backend_ever/mini_backend.js"></script>
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/task.object.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/navBar.js"></script>
     <script src="./js/addTask.js"></script>
+
 
 
     <link rel="stylesheet" href="./css/addTask.css">
@@ -32,7 +34,7 @@
             <!-- Container for Add Task -->
             <div class="outerContainer">
                 <!-- Form -->
-                <form id="addTask" onsubmit="createTask(); return false;">
+                <form id="addTask" style="height: auto;" onsubmit="createTask(); return false;">
                     <div class="column">
                         <!-- Title -->
                         <div class="content">
@@ -74,7 +76,7 @@
                         <!-- Buttons -->
                         <div class="content buttonBox">
                             <button class="btnCancle" type="reset"><b>Löschen</b></button>
-                            <button class="btnCreate" type="submit"><b>Speichern</b></button>
+                            <button onclick="return addTask()" class="btnCreate" type="submit"><b>Speichern</b></button>
                         </div>
                     </div>
                 </form>

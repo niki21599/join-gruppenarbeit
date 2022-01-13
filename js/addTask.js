@@ -9,7 +9,9 @@ let urgency = ['Sehr Hoch', 'Hoch', 'Normal', 'Hat Zeit'];
 async function init() {
     defineCategory();
     defineUrgency();
-    await loadFromBackend();
+
+    loadTasksFromServer()
+
 }
 
 /**
@@ -45,6 +47,7 @@ function defineUrgency() {
  * saves new task in JSON array onsubmit
  */
 function createTask() {
+
     allTasks.push({
         id: new Date().getTime(),
         title: document.getElementById('title').value,
@@ -141,4 +144,23 @@ function showSelection() {
 function unselect(index) {
     selectetPositions.splice(index, 1);
     showSelection();
+}
+
+function addTask() {
+
+    let id = Math.random() * 1000000;
+    let title = document.getElementById("title").value;
+    let section = "todo";
+    let description = document.getElementById("description").value;
+    let date = document.getElementById("date").value;
+    let urgency = document.getElementById("input-urge").value;
+    let user = "Niklas";
+    let category = document.getElementById("input-cat").value;
+    let color = "yellow";
+
+    let task = new Task(id, title, section, description, date, urgency, user, category, color);
+
+    addTaskToServer(task);
+
+    return false;
 }

@@ -1,64 +1,28 @@
-let tasks = [{
-        id: 0,
-        title: "First",
-        section: "todo",
-        active: true,
-        description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        date: "01/12/2012",
-        urgency: "Sehr Dringend",
-        user: "Niklas",
-        category: "Management"
-    },
-    {
-        id: 1,
-        title: "Juhu Party",
-        section: "inprogress",
-        active: true,
-        description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        date: "11/12/2012",
-        urgency: "Sehr Dringend",
-        user: "Niklas",
-        category: "Marketing"
-    },
-    {
-        id: 2,
-        title: "Bla bla bla",
-        section: "testing",
-        active: true,
-        description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        date: "01/12/2012",
-        urgency: "Wichtig",
-        user: "Niklas",
-        category: "Engineering"
-    },
-    {
-        id: 3,
-        title: "Dies das",
-        section: "done",
-        active: true,
-        description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        date: "01/12/2012",
-        urgency: " Dringend",
-        user: "Niklas",
-        category: "Ka"
-    }
-]
-
 let currentDraggedElement;
 
-async function loadTasksFromServer() {
-    //await downloadFromServer();
-    //tasks = JSON.parse(backend.getItem('tasks')) || [];
-}
 
-async function saveToServer() {
-    //await backend.setItem('tasks', JSON.stringify(tasks));
-}
 
-function updateTaskHTML() {
-    loadTasksFromServer();
+/*
+    id: 0,
+    title: "First",
+    section: "todo",
+    active: true,
+    description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    date: "01/12/2012",
+    urgency: "Sehr Dringend",
+    user: "Niklas",
+    category: "Management"
+
+*/
+
+async function updateTaskHTML() {
+    console.log(tasks);
+    await loadTasksFromServer();
+    console.log(tasks);
     deleteInnerHTML();
+
     loadTasks();
+
 }
 
 function loadTasks() {
@@ -71,7 +35,7 @@ function loadTasks() {
 
 function getTaskHTML(task) {
     return `
-    <div onclick="openInfo(${task.id})" draggable="true" ondragstart="startDragging(${task.id})" class="card card-task">
+    <div onclick="openInfo(${task.id})" draggable="true" ondragstart="startDragging(${tasks.indexOf(task)})" class="card card-task">
         <div class="card-body">
             <h5 class="card-title">${task.title}</h5>
         </div>
@@ -85,9 +49,9 @@ function deleteInnerHTML() {
     document.getElementById("testing").innerHTML = "";
     document.getElementById("done").innerHTML = "";
 }
-
-function startDragging(id) {
-    currentDraggedElement = id;
+//index
+function startDragging(index) {
+    currentDraggedElement = index;
 }
 
 function allowDrop(ev) {
@@ -98,7 +62,8 @@ function moveTo(section) {
     tasks[currentDraggedElement].section = section;
     removeHighlight(section);
     saveToServer();
-    updateTaskHTML();
+    deleteInnerHTML();
+    loadTasks();
 }
 
 function highlight(id) {

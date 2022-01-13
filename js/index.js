@@ -30,4 +30,30 @@ function includeHTML() {
     }
 }
 
-setURL("https://gruppe-143.developerakademie.net/smallest_backend_ever");
+setURL("http://gruppe-143.developerakademie.net/smallest_backend_ever");
+
+// KOmmunikation mit dem Server  ==> Funktionen aus Github von Junus
+let tasks = [];
+
+// analog zu init
+async function loadTasksFromServer() {
+    await downloadFromServer();
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
+
+}
+// analog zu save
+async function addTaskToServer(task) {
+    console.log(tasks);
+    tasks.push(task);
+    await backend.setItem('tasks', JSON.stringify(tasks));
+    console.log(tasks);
+
+}
+
+async function saveToServer() {
+    await backend.setItem('tasks', JSON.stringify(tasks));
+}
+
+function deleteTask() {
+    backend.deleteItem('tasks');
+}

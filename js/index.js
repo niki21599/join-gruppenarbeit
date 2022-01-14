@@ -28,12 +28,14 @@ function includeHTML() {
             return;
         }
     }
+    changeActiveSection();
 }
 
 setURL("http://gruppe-143.developerakademie.net/smallest_backend_ever");
 
 // KOmmunikation mit dem Server  ==> Funktionen aus Github von Junus
 let tasks = [];
+
 
 // analog zu init
 async function loadTasksFromServer() {

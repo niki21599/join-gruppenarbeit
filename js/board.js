@@ -16,9 +16,9 @@ let currentDraggedElement;
 */
 
 async function updateTaskHTML() {
-    console.log(tasks);
+
     await loadTasksFromServer();
-    console.log(tasks);
+
     deleteInnerHTML();
 
     loadTasks();
